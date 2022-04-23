@@ -63,9 +63,9 @@ export function countFlips(array) {
   var tail = 0;
 
   for(let i=0;i<array.length; i++) {
-    if (array[i]==='heads'){
+    if (array[i] == "heads"){
       head++;
-    } else if (array[i]==='tails'){
+    } else if (array[i] == "tails"){
       tail++;
     }
   }
@@ -83,8 +83,13 @@ export function countFlips(array) {
  * returns: { call: 'tails', flip: 'heads', result: 'lose' }
  */
 
-function flipACoin(call) {
-
+export function flipACoin(call) {
+  let flip = coinFlip()
+  if (call == flip) {
+    return {call: call, flip: flip, result: 'win'}
+  } else {
+    return {call: call, flip: flip, result: 'lose'}
+  }
 }
 
 
