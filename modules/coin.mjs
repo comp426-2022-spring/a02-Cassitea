@@ -39,8 +39,8 @@ function coinFlip() {
 
 function coinFlips(flips) {
   const result = [];
-  for (let i=0; i<flips; i++) {
-    result.push(coinFlip())
+  for (var i=0; i<flips; i++) {
+    result[i] = coinFlip();
   }
   return result;
 }
@@ -59,11 +59,11 @@ function coinFlips(flips) {
  */
 
 function countFlips(array) {
-  let headCount = 0;
-  let tailCount = 0;
+  var headCount = 0;
+  var tailCount = 0;
 
-  for(let i=0;i<array.length; i++) {
-    if (array[i] === "heads"){
+  for(var i=0;i<array.length; i++) {
+    if (array[i] === 'heads'){
       headCount++;
     } else {
       tailCount++;
@@ -85,7 +85,8 @@ function countFlips(array) {
  */
 
 function flipACoin(call) {
-  let flip = coinFlip()
+  var flip = coinFlip();
+
   if (call == flip) {
     return {call: call, flip: flip, result: 'win'}
   } else {
