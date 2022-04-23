@@ -40,7 +40,7 @@ export function coinFlip() {
 export function coinFlips(flips) {
   const result = [];
   for (let i=0; i<flips; i++) {
-    result[i] = coinFlip();
+    result.push(coinFlip())
   }
   return result;
 }
@@ -58,8 +58,18 @@ export function coinFlips(flips) {
  * @returns {{ heads: number, tails: number }}
  */
 
-function countFlips(array) {
+export function countFlips(array) {
+  var head = 0;
+  var tail = 0;
 
+  for(let i=0;i<array.length; i++) {
+    if (array[i]==='heads'){
+      head++;
+    } else if (array[i]==='tails'){
+      tail++;
+    }
+  }
+  return {heads: head, tails: tail};
 }
 
 /** Flip a coin!
