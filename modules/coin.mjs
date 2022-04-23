@@ -38,7 +38,11 @@ export function coinFlip() {
  */
 
 export function coinFlips(flips) {
-
+  const result = [];
+  for (let i=0; i<flips; i++) {
+    result[i] = coinFlip();
+  }
+  return result;
 }
 
 /** Count multiple flips
